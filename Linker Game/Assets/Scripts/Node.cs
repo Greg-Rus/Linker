@@ -51,8 +51,11 @@ public class NodeController : INode
 	}
 	public void addNeighbour(INode neighbour)
 	{
-		Vector2 neighbourLocation = neighbour.getNodeCoordinates ();
-		nodeModel.neighbours.Add (neighbourLocation, neighbour);
+		Vector2 neighbourLocalCoordinates = Utilities.globalToLocalBoardCoordinates(getNodeCoordinates(), neighbour.getNodeCoordinates());
+
+		nodeModel.neighbours.Add (neighbourLocalCoordinates, neighbour);
+
+
 	}
 	public void removeNiegbour(Vector2 neighbourLocation)
 	{

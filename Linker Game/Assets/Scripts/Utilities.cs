@@ -24,4 +24,8 @@ public static class Utilities {
 			return true;
 		}
 	}
+	public static Vector2 globalToLocalBoardCoordinates (Vector2 nodeCoordinates, Vector2 otherCoordinates)
+	{
+		return otherCoordinates - nodeCoordinates;
+	}
 }

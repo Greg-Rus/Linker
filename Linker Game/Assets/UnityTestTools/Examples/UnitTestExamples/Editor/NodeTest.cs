@@ -67,10 +67,11 @@ namespace UnityTest
 			connectNodes.Invoke (testNetwork, new object[]{map});
 			INode testNode = map [1, 1];
 			INode expectedLeftNode = map [0, 1];
-			INode returnedLeftNode = testNode.getNeighbourNodeByLocation (new Vector2 (0f,1f));
+			INode returnedLeftNode = testNode.getNeighbourNodeByLocation (new Vector2 (-1f,0f));
 			Assert.AreSame(expectedLeftNode, returnedLeftNode);
 		}
-		[Test]
+		[Test  
+		 ]
 		public void findNeigboursForNodeTest()
 		{
 			testNetwork.initialize (3, 3);
@@ -161,13 +162,13 @@ namespace UnityTest
 		public void addNeighbourTest()
 		{
 			INode testNode = map [1, 1];
-			Vector2 testNeighbourLocation = new Vector2 (2, 1);
+			Vector2 testNeighbourLocalCoordinates = new Vector2 (1, 0);
 			INode testNeighbour = map [2, 1];
 			testNode.addNeighbour (testNeighbour);
 			Probe<NodeController> testNodeProbe = new Probe<NodeController> (map[1,1]);
 			NodeModel testNodeModel = testNodeProbe.getField ("nodeModel") as NodeModel;
 			Assert.NotNull (testNodeModel);
-			Assert.IsTrue (testNodeModel.neighbours.ContainsKey (testNeighbourLocation));
+			Assert.IsTrue (testNodeModel.neighbours.ContainsKey (testNeighbourLocalCoordinates));
 			Assert.IsTrue (testNodeModel.neighbours.ContainsValue (testNeighbour));
 			Vector2 incorrectNeighbourLocation = new Vector2 (0, 1);
 			Assert.IsFalse (testNodeModel.neighbours.ContainsKey (incorrectNeighbourLocation));

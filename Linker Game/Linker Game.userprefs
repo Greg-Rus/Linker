@@ -1,15 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Network.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\UnityTestTools\Examples\UnitTestExamples\Editor\NodeTest.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameController.cs" Line="4" Column="44" />
+      <File FileName="Assets\UnityTestTools\Examples\UnitTestExamples\Editor\NodeTest.cs" Line="70" Column="84" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\FSM.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\INode.cs" Line="12" Column="20" />
+      <File FileName="Assets\Scripts\INode.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Tile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Node.cs" Line="17" Column="73" />
-      <File FileName="Assets\Scripts\Network.cs" Line="49" Column="31" />
+      <File FileName="Assets\Scripts\Node.cs" Line="58" Column="3" />
+      <File FileName="Assets\Scripts\Network.cs" Line="80" Column="5" />
       <File FileName="Assets\UnityTestTools\Examples\UnitTestExamples\Editor\SampleTests.cs" Line="64" Column="2" />
-      <File FileName="Assets\UnityTestTools\Examples\UnitTestExamples\Editor\NodeTest.cs" Line="94" Column="29" />
+      <File FileName="Assets\Scripts\Utilities.cs" Line="4" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

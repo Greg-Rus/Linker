@@ -38,17 +38,18 @@ public class Network : MonoBehaviour {
 
 	private void connectNodes(NodeController[,] map)
 	{
-		List<Vector2> neighboursGlobalLocations = new List<Vector2> ();
+		List<Vector2> neighboursLocalCoordinates = new List<Vector2> ();
 
 		for (int i = 0; i< boardWidth; i++)
 		{
 			for (int j = 0; j < boardHeight; j++)
 			{
 				NodeController node = map[i,j];
-				findNeigboursForNode(node, neighboursGlobalLocations);
-				foreach( Vector2 location in neighboursGlobalLocations)
+				findNeigboursForNode(node, neighboursLocalCoordinates);
+				foreach( Vector2 location in neighboursLocalCoordinates)
 				{
 					node.addNeighbour(map[(int)location.x, (int)location.y]);
+					
 				}
 			}
 		}
@@ -74,8 +75,8 @@ public class Network : MonoBehaviour {
 				   neighbourY >= boardHeight || 
 				   (neighbourX == nodeLocation.x && neighbourY == nodeLocation.y)) continue;
 
-				Vector2 neighbourGlobalLocation = new Vector2(neighbourX, neighbourY);
-				neighbours.Add (neighbourGlobalLocation);
+				Vector2 neighbourLocalCoordinates = new Vector2(neighbourX, neighbourY);
+				neighbours.Add (neighbourLocalCoordinates);
 			}
 		}
 		return neighbours;
