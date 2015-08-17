@@ -15,11 +15,14 @@ public class NodeController : INode
 {
 	private NodeModel nodeModel;
 	private Node nodeView; //Not used yet. Exists to enable controll of the GameObject
+	public FSMSystem nodeFSM;
+	public bool processLinkReq; //TODO this should be an event queue or something...
 
-	public NodeController(NodeModel model, Node view)
+	public NodeController(NodeModel model, Node view, FSMSystem FSM)
 	{
 		nodeModel = model;
 		nodeView = view;
+		nodeFSM = FSM;
 	}
 
 	public TileType getTileType()

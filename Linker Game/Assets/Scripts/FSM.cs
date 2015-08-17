@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public enum Transition{
-	select, poiLost, poiInFireingRange, foundClosestWaypoint, isPulled, hasFallen, stoppedBouncing
+	//For global state ProcessingLink
+	processLinkList, continueLinkProcessing, forwardLinkList, waitForUploadInd, startDownloading, trimLinkList, 
+	forwardTrimmedLinkList, waitForNextLinkListForward, onForwardLinkList, finishLinkProcessing
 
 }
 
 public enum StateID{
-	Idle, Selected, FollowingPath, SellectingNextNode, Falling, Bouncing, Stored
+	Idle, ProcessingLink, SendingUploadInd, ForwardingLinkList, WaitingForUploadInd, Downloading, TrimmingLinkList, 
+	WaitingForNextLinkListForward, Sourcing
 }
 
 //public class FSM : MonoBehaviour {}
@@ -17,6 +20,7 @@ public abstract class FSMState
 {
 	protected Dictionary<Transition, StateID> map = new Dictionary<Transition, StateID> ();
 	protected StateID stateID;
+	protected NodeController nodeController;
 	public StateID ID { get { return stateID; } }
 
 	public void AddTransition (Transition newTransition, StateID newId)

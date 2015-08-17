@@ -29,7 +29,8 @@ public class Network : MonoBehaviour {
 				newNode.transform.parent = this.transform;
 				Node newNodeView = newNode.GetComponent<Node>();
 				NodeModel newNodeModel = new NodeModel(new Vector2(i,j));
-				map[i,j] = new NodeController(newNodeModel, newNodeView);
+				FSMSystem newNodeFSM = configureFSM();
+				map[i,j] = new NodeController(newNodeModel, newNodeView, newNodeFSM);
 			}
 		}
 		Utilities.alignGroupCenterToOrigin(transform,nodePrefab,boardWidth,boardHeight);
@@ -80,6 +81,12 @@ public class Network : MonoBehaviour {
 			}
 		}
 		return neighbours;
+	}
+	
+	private FSMSystem configureFSM()
+	{
+		FSMSystem FSM = new FSMSystem();
+		return FSM;
 	}
 
 }
